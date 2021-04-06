@@ -1,0 +1,5 @@
+#!/home/boris_tomilin/PycharmProjects/python-project-lvl2/.venv/bin/python
+from gendiff.scripts.gendiff import main
+
+if __name__ == '__main__':
+    main()
