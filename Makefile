@@ -14,4 +14,4 @@ package-install:
 	python3 -m pip install dist/*.whl
 
 make lint:
-	poetry run flake8 brain_games
+	poetry run flake8 gendiff
