@@ -1,26 +1,35 @@
-language: python
-env:
-  global:
-    - CC_TEST_REPORTER_ID=87b80a3b940d7a0f09bef11bbf864dfc357f674e22bd8a937d0b091c8a89c321
+name: linter-tests
 
-matrix:
-  include:
-    - name:
-      python: 3.8.5
+on: [push, pull_request]
 
-      before_install:
-      - pip install poetry
-      - make
-      - pip install coverage
-      - pip install pytest-cov
-      install:
-      - make configure
-      before_script:
-      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - chmod +x ./cc-test-reporter
-      - ./cc-test-reporter before-build
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8.5]
 
-      script:
-      - make test
-      after_script:
-      - ./cc-test-reporter after-build --coverage-input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT 
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run : |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
+          make install
+
+      - name: Lint the package
+        run : |
+            make lint
+
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test
+          debug: true
