@@ -1,31 +1,26 @@
-name: tests
+language: python
+env:
+  global:
+    - CC_TEST_REPORTER_ID=87b80a3b940d7a0f09bef11bbf864dfc357f674e22bd8a937d0b091c8a89c321
 
-on:
-  - push
-  - pull_request
+matrix:
+  include:
+    - name:
+      python: 3.8.5
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # we want to test our package on several versions of Python
-        python-version: [3.8.5]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-        # make depends on poetry
-      - name: Install dependencies
-        run: |
-          pip install poetry
-          make install
-      - name: Run tests
-        run: |
-          make test2
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      before_install:
+      - pip install poetry
+      - make
+      - pip install coverage
+      - pip install pytest-cov
+      install:
+      - make configure
+      before_script:
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - chmod +x ./cc-test-reporter
+      - ./cc-test-reporter before-build
+
+      script:
+      - make test
+      after_script:
+      - ./cc-test-reporter after-build --coverage-input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT 
