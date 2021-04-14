@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.37.0"
+version = "0.40.0"
 description = ""
 authors = ["tomilinBV <qwertere97@mail.ru>"]
 packages = [
@@ -11,6 +11,7 @@ packages = [
 python = "^3.8.5"
 pytest = "^6.2.3"
 pytest-cov = "^2.11.1"
+PyYAML = "^5.4.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.0"
