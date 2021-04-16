@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-            matrix:
+      matrix:
         # we want to test our package on several versions of Python
         python-version: [3.8.5]
     steps:
