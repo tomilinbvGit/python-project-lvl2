@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.40.0"
+version = "0.50.0"
 description = ""
 authors = ["tomilinBV <qwertere97@mail.ru>"]
 packages = [
@@ -17,7 +17,7 @@ PyYAML = "^5.4.1"
 flake8 = "^3.9.0"
 
 [tool.poetry.scripts]
-gendiff = "gendiff.scripts.gendiff:gendiff"
+gendiff = "gendiff.scripts.gendiff:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
