@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "1.0.0"
-description = ""
+description = "Generate difference between json and yaml files"
 authors = ["tomilinBV <qwertere97@mail.ru>"]
 packages = [
   { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8.5,<4.0"
+python = "3.8"
 pytest = "^6.2.3"
 pytest-cov = "^2.11.1"
 PyYAML = "^5.4.1"
