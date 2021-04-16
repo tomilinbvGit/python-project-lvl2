@@ -1,11 +1,13 @@
 """Function for determines the difference in files."""
 
 from gendiff.parser import parse
-from gendiff.formatters import stylish
+from gendiff.formatters import stylish, plain, json
 
 
 FORMATS = {     # noqa: WPS407
-    'stylish': stylish
+    'stylish': stylish,
+    'plain': plain,
+    'json': json
 }
 
 
