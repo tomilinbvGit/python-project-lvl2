@@ -3,7 +3,9 @@
 from gendiff.parser import parse
 from gendiff.formatters import stylish
 
-FORMATS = {'stylish': stylish}
+FORMATS = { # noqa: WPS407
+    'stylish': stylish
+}
 
 
 def generate_diff(file_path1, file_path2, formatter='stylish'):
