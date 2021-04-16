@@ -7,14 +7,9 @@ build:
 gendiff:
 	poetry run gendiff
 
-publish:
-	poetry publish --dry-run
-
-package-install:
-	python3 -m pip install dist/*.whl
-
 make lint:
-	poetry run flake8 gendiff
+		poetry run flake8 gendiff
+		poetry run flake8 tests
 
-test:
-	poetry run pytest tests/ --cov=gendiff --cov-report=xml
+pytest:
+		poetry run pytest --cov=gendiff tests/ --cov-report xml
