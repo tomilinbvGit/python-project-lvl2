@@ -5,6 +5,7 @@ TAB = '    '
 
 
 def render(diff, depth=0):
+    # noqa: C901
     """Format dict with difference.
     Args:
         diff: dict
