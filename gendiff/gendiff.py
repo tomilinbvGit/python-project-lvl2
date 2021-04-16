@@ -3,7 +3,8 @@
 from gendiff.parser import parse
 from gendiff.formatters import stylish
 
-FORMATS = { # noqa: WPS407
+
+FORMATS = {     # noqa: WPS407
     'stylish': stylish
 }
 
