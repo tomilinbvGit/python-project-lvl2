@@ -7,4 +7,4 @@ dist/
 cc-test-reporter
 *.xml
 .coverage
-.github/workflows
+.github/
