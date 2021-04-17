@@ -3,11 +3,13 @@
 TAB = '    '
 
 
-def render(diff, depth=0):      # noqa: C901
+def render(diff, depth=0):
     """Format dict with difference.
+
     Args:
         diff: dict
         depth: int
+
     Returns:
         Return formatting difference.
     """
@@ -64,11 +66,13 @@ def render(diff, depth=0):      # noqa: C901
 
 def join_line(depth, indent, key, mean):
     """Join words in line.
+
     Args:
         depth: int
         indent: str
         key: str
         mean: str
+
     Returns:
         Return join line.
     """
@@ -78,9 +82,11 @@ def join_line(depth, indent, key, mean):
 
 def format_unchanging(dict_unchanged, depth):
     """Format dict without changing.
+
     Args:
         dict_unchanged: dict
         depth: int
+
     Returns:
         Return formatting dict.
     """
