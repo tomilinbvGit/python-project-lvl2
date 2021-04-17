@@ -3,7 +3,7 @@ __pycache__
 dist/
 *.pyc
 .venv/
+.idea/
+cc-test-reporter
+*.xml
 .coverage
-coverage.xml
-.pytest_cache/
-.github/workflows
