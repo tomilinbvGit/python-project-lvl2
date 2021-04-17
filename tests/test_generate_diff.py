@@ -1,9 +1,7 @@
 """Module of tests formatters."""
 import pathlib
 import json
-
 import pytest
-
 from gendiff import gendiff
 
 
@@ -12,6 +10,11 @@ from gendiff import gendiff
      'tests/fixtures/file2.json',
      'tests/fixtures/expected_file1_file2_stylish.txt',
      'stylish'
+     ),
+    ('tests/fixtures/file_nested1.json',
+     'tests/fixtures/file_nested2.json',
+     'tests/fixtures/expected_nested_files_stylish.txt',
+     'stylish',
      ),
     ('tests/fixtures/file1.json',
      'tests/fixtures/file2.json',

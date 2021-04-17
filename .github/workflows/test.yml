@@ -22,11 +22,10 @@ jobs:
       run: |
         pip install poetry
         make install
-
-    - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v2.7.5
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: make pytest
-        debug: true
+    - name: Run pytest
+      run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+        ./cc-test-reporter before-build
+        make pytest
+        ./cc-test-reporter after-build -r ${{ secrets.ID_TEST_COVERAGE }}
