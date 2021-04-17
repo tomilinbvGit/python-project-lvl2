@@ -6,3 +6,4 @@ dist/
 .idea/
 *.xml
 .coverage
+cc-test-reporter
