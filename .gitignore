@@ -7,4 +7,3 @@ dist/
 cc-test-reporter
 *.xml
 .coverage
-.github/
