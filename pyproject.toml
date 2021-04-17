@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.1.0"
-description = "The program determines difference of two files (support JSON and YAML files)"
-authors = ["Sergey Kornienko <skornienko29@gmail.com>"]
+version = "0.9.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
 packages = [
-  { include = "gendiff" },
+  { include = "brain_games" },
 ]
 
 [tool.poetry.dependencies]
