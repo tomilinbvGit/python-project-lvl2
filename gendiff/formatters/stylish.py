@@ -1,4 +1,3 @@
-# noqa: C901
 """Module with formatter stylish."""
 
 TAB = '    '
