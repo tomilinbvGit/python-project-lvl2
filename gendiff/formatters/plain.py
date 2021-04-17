@@ -1,4 +1,3 @@
-
 """Module with formatter plain."""
 
 PROPERTY = 'Property'
@@ -6,9 +5,11 @@ PROPERTY = 'Property'
 
 def render(diff, path=''):
     """Format dict with difference.
+
     Args:
         diff: dict
         path: str
+
     Returns:
         Return formatting difference.
     """
@@ -49,8 +50,10 @@ def render(diff, path=''):
 
 def get_correct_value(value):
     """Convert value.
+
     Args:
         value: different
+
     Returns:
         Return correct value.
     """

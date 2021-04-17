@@ -5,6 +5,7 @@ from gendiff.gendiff import generate_diff
 
 def main():
     """Launch gendiff cli.
+
     Returns:
         Return cli.
     """

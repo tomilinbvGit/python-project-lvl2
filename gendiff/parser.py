@@ -6,9 +6,11 @@ import yaml
 
 def parse(content, suffix):
     """Parse content of a file.
+
     Args:
         content: content
         suffix: str
+
     Returns:
         Return content format dict.
     """

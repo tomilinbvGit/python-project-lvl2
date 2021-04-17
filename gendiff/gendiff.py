@@ -1,22 +1,24 @@
 """Function for determines the difference in files."""
 
 from gendiff.parser import parse
-from gendiff.formatters import stylish, plain, json
+from gendiff.formatters import json as json_format
+from gendiff.formatters import plain, stylish
 
-
-FORMATS = {     # noqa: WPS407
+FORMATS = {  # noqa: WPS407
     'stylish': stylish,
     'plain': plain,
-    'json': json
+    'json': json_format,
 }
 
 
 def generate_diff(file_path1, file_path2, formatter='stylish'):
     """Generate difference and formatting.
+
     Args:
         file_path1: path
         file_path2: path
         formatter: module
+
     Returns:
         Return formatting difference files.
     """
@@ -30,8 +32,10 @@ def generate_diff(file_path1, file_path2, formatter='stylish'):
 
 def get_format(file_path):
     """Get format of file.
+
     Args:
         file_path: path
+
     Returns:
         Return suffix of file.
     """
@@ -40,8 +44,10 @@ def get_format(file_path):
 
 def read_file(file_path):
     """Open file.
+
     Args:
         file_path: path
+
     Returns:
         Return content of a file.
     """
@@ -53,9 +59,11 @@ def read_file(file_path):
 
 def get_diff(file1, file2):
     """Determine the difference in files.
+
     Args:
         file1: dict
         file2: dict
+
     Returns:
         Return dict with difference.
     """

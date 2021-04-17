@@ -4,5 +4,6 @@ dist/
 *.pyc
 .venv/
 .idea/
+cc-test-reporter
 *.xml
 .coverage
