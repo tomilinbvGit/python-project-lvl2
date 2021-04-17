@@ -6,4 +6,3 @@ dist/
 .coverage
 coverage.xml
 .pytest_cache/
-.github/workflows/
